@@ -1,0 +1,15 @@
+.App {
+  text-align: center;
+  margin: 0 15px;
+}
+.family-bios {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 15px;
+}
+article {
+  padding: 1rem;
+  text-align: left;
+  border: 1px solid #888;
+  border-radius: 5px;
+}
