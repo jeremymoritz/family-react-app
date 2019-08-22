@@ -1,6 +1,40 @@
 {
-  "family": [
-    { "id": 1, "firstName": "Jeremy", "dob": "1981-06-30", "bio": "Loves Christine" },
-    { "id": 2, "firstName": "Christine", "dob": "1981-03-17", "bio": "Loves Jeremy" }
+  "familyMembers": [
+    {
+      "id": 1,
+      "firstName": "Jeremy",
+      "dob": "1981-06-30",
+      "bio": "Loves Christine"
+    },
+    {
+      "id": 2,
+      "firstName": "Christine",
+      "dob": "1981-03-17",
+      "bio": "Loves Jeremy"
+    },
+    {
+      "id": 3,
+      "firstName": "Angel",
+      "dob": "2004-09-18",
+      "bio": "Loves music\n"
+    },
+    {
+      "id": 4,
+      "firstName": "Tony",
+      "dob": "2006-01-02",
+      "bio": "Loves Gaming"
+    },
+    {
+      "id": 5,
+      "firstName": "Harmony",
+      "dob": "2009-02-09",
+      "bio": "Loves performing"
+    },
+    {
+      "id": 6,
+      "firstName": "Charity",
+      "dob": "2010-06-11",
+      "bio": "Loves cuddling"
+    }
   ]
 }

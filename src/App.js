@@ -2,14 +2,14 @@ import React, { useState, useEffect } from 'react';
 import './App.scss';
 import Person from './components/Person';
 import FamilyForm from './components/FamilyForm';
-import { getFamily } from './tools/dbApi';
+import { getFamilyMembers, postFamilyMember } from './tools/dbApi';
 
 const App = () => {
   let starterFam = [];
   const [family, setFamily] = useState(starterFam);
 
   useEffect(() => {
-    getFamily().then(setFamily);
+    getFamilyMembers().then(setFamily);
   }, []);
 
   function renderFamilyMember(famMember) {
@@ -17,7 +17,7 @@ const App = () => {
   }
 
   function handleFamSubmit(newFamilyMember) {
-    setFamily([...family, newFamilyMember]);
+    postFamilyMember(newFamilyMember).then(setFamily);
   }
 
   return (

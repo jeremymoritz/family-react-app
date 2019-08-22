@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import TextInput from './TextInput';
+import TextArea from './TextArea';
 
 const emptyFamMember = {
   id: null,
@@ -14,9 +15,8 @@ function FamilyForm(props) {
   function handleSubmit(event) {
     event.preventDefault();
 
-    const newId = Math.floor(Math.random() * 99);
-
-    props.onFamilySubmit({ ...famMember, id: newId });
+    props.onFamilySubmit(famMember);
+    setFamMember(emptyFamMember);
   }
   function handleChange(event) {
     const { name, value } = event.target;
@@ -42,7 +42,7 @@ function FamilyForm(props) {
           placeholder="YYYY-MM-DD"
           value={famMember.dob}
         />
-        <TextInput
+        <TextArea
           label="Bio"
           name="bio"
           onChange={handleChange}
