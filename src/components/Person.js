@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Person = ({ firstName, dob, bio }) => {
+const Person = ({ firstName, dob, bio, onDeleteClick }) => {
   function zeroPad(number, digits = 2) {
     const pad = '0'.repeat(digits);
 
@@ -36,6 +36,9 @@ const Person = ({ firstName, dob, bio }) => {
         <h3>{firstName}</h3>
         <h4>{dob}</h4>
         <p>{bio}</p>
+        <button className="delete" onClick={onDeleteClick}>
+          &times;
+        </button>
       </section>
       <aside>{getImgUrl() ? <img src={getImgUrl()} alt={firstName} /> : ''}</aside>
     </article>
@@ -45,7 +48,8 @@ const Person = ({ firstName, dob, bio }) => {
 Person.propTypes = {
   firstName: PropTypes.string.isRequired,
   dob: PropTypes.string,
-  bio: PropTypes.string
+  bio: PropTypes.string,
+  onDeleteClick: PropTypes.func.isRequired
 };
 
 export default Person;

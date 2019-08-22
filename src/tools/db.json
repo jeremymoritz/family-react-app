@@ -13,12 +13,6 @@
       "bio": "Loves Jeremy"
     },
     {
-      "id": 3,
-      "firstName": "Angel",
-      "dob": "2004-09-18",
-      "bio": "Loves music\n"
-    },
-    {
       "id": 4,
       "firstName": "Tony",
       "dob": "2006-01-02",
@@ -32,9 +26,15 @@
     },
     {
       "id": 6,
-      "firstName": "Charity",
-      "dob": "2010-06-11",
-      "bio": "Loves cuddling"
+      "firstName": "Symphony",
+      "dob": "2017-11-27",
+      "bio": "Loves her binky"
+    },
+    {
+      "id": 7,
+      "firstName": "Chase",
+      "dob": "2012-07-20",
+      "bio": "Loves Mario"
     }
   ]
 }

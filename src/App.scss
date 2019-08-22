@@ -19,6 +19,29 @@ article.person {
   display: grid;
   grid-template-columns: 1fr 80px;
 
+  section {
+    h3 {
+      margin: 0;
+    }
+    h4 {
+      font-weight: lighter;
+      margin: 0;
+      font-size: 80%;
+    }
+    .delete {
+      background: #b22;
+      color: #fff;
+      font-weight: bold;
+      font-size: 1.25rem;
+      border-radius: 5px;
+
+      &:hover {
+        background: lighten($color: #b22, $amount: 20%);
+        cursor: pointer;
+      }
+    }
+  }
+
   aside img {
     max-width: 100%;
     border-radius: 5px;

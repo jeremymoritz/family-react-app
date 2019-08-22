@@ -22,3 +22,20 @@ export async function postFamilyMember(newFamilyMember) {
     return await getFamilyMembers();
   }
 }
+
+export async function deleteFamilyMember(familyMemberToDelete) {
+  const idToDelete = familyMemberToDelete.id;
+  const response = await fetch(`${familyUrl}/${idToDelete}`, {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ id: familyMemberToDelete.id })
+  });
+
+  if (response.ok) {
+    console.log(response);
+
+    return await getFamilyMembers();
+  }
+}
