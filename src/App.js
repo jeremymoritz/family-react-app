@@ -1,14 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.scss';
 import Person from './components/Person';
 import FamilyForm from './components/FamilyForm';
+import { getFamily } from './tools/dbApi';
 
 const App = () => {
-  const starterFam = [
-    { id: 1, firstName: 'Jeremy', dob: '1981-06-30', bio: 'Loves Christine' },
-    { id: 2, firstName: 'Christine', dob: '1981-03-17', bio: 'Loves Jeremy' }
-  ];
+  let starterFam = [];
   const [family, setFamily] = useState(starterFam);
+
+  useEffect(() => {
+    getFamily().then(setFamily);
+  }, []);
 
   function renderFamilyMember(famMember) {
     return <Person {...famMember} key={famMember.id} />;

@@ -1,0 +1,6 @@
+{
+  "family": [
+    { "id": 1, "firstName": "Jeremy", "dob": "1981-06-30", "bio": "Loves Christine" },
+    { "id": 2, "firstName": "Christine", "dob": "1981-03-17", "bio": "Loves Jeremy" }
+  ]
+}
