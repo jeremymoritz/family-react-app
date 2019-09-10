@@ -10,6 +10,9 @@
   grid-template-columns: 1fr 1fr;
   grid-gap: 15px;
 }
+.float-right {
+  float: right;
+}
 article.person {
   padding: 1rem;
   text-align: left;
@@ -20,6 +23,11 @@ article.person {
   grid-template-columns: 1fr 80px;
 
   section {
+    .edit-btn {
+      float: right;
+      margin-right: 0.5rem;
+      cursor: pointer;
+    }
     h3 {
       margin: 0;
     }
@@ -34,10 +42,10 @@ article.person {
       font-weight: bold;
       font-size: 1.25rem;
       border-radius: 5px;
+      cursor: pointer;
 
       &:hover {
         background: lighten($color: #b22, $amount: 20%);
-        cursor: pointer;
       }
     }
   }

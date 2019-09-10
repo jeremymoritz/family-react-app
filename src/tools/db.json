@@ -4,37 +4,37 @@
       "id": 1,
       "firstName": "Jeremy",
       "dob": "1981-06-30",
-      "bio": "Loves Christine"
+      "hobbies": "Chess, Musicals, Games, Christine"
     },
     {
       "id": 2,
       "firstName": "Christine",
       "dob": "1981-03-17",
-      "bio": "Loves Jeremy"
-    },
-    {
-      "id": 4,
-      "firstName": "Tony",
-      "dob": "2006-01-02",
-      "bio": "Loves Gaming"
-    },
-    {
-      "id": 5,
-      "firstName": "Harmony",
-      "dob": "2009-02-09",
-      "bio": "Loves performing"
-    },
-    {
-      "id": 6,
-      "firstName": "Symphony",
-      "dob": "2017-11-27",
-      "bio": "Loves her binky"
+      "hobbies": "Piano, Home Improvement, Reading, Jeremy"
     },
     {
       "id": 7,
-      "firstName": "Chase",
-      "dob": "2012-07-20",
-      "bio": "Loves Mario"
+      "firstName": "Harmony",
+      "dob": "2011-02-09",
+      "hobbies": "Singing, Dancing, Performing, and Violin"
+    },
+    {
+      "id": 10,
+      "firstName": "Tony",
+      "dob": "2014-01-02",
+      "hobbies": "Gaming and Sharon!!"
+    },
+    {
+      "id": 11,
+      "firstName": "Symphony",
+      "dob": "2017-11-27",
+      "hobbies": "iPad"
+    },
+    {
+      "id": 12,
+      "firstName": "Charity",
+      "dob": "2010-06-11",
+      "hobbies": "Games"
     }
   ]
 }

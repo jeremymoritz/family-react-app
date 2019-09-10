@@ -23,6 +23,20 @@ export async function postFamilyMember(newFamilyMember) {
   }
 }
 
+export async function putFamilyMember(familyMemberToEdit) {
+  const response = await fetch(`${familyUrl}/${familyMemberToEdit.id}`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(familyMemberToEdit)
+  });
+
+  if (response.ok) {
+    return await getFamilyMembers();
+  }
+}
+
 export async function deleteFamilyMember(familyMemberToDelete) {
   const idToDelete = familyMemberToDelete.id;
   const response = await fetch(`${familyUrl}/${idToDelete}`, {

@@ -1,7 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import FamilyForm from './FamilyForm';
 
-const Person = ({ firstName, dob, bio, onDeleteClick }) => {
+function Person({ familyMember, onDeleteClick, onEditClick, onFamPut, editMode = false }) {
+  const { firstName, dob, hobbies } = familyMember;
+
   function zeroPad(number, digits = 2) {
     const pad = '0'.repeat(digits);
 
@@ -25,31 +29,55 @@ const Person = ({ firstName, dob, bio, onDeleteClick }) => {
       return null;
     }
 
-    const imgPath = 'http://moritzfamily.com/img/family';
+    return `http://moritzfamily.com/img/family/${firstName.toLowerCase()}-${zeroPad(
+      getAgeFromDob()
+    )}.jpg`;
+  }
 
-    return `${imgPath}/${firstName.toLowerCase()}-${zeroPad(getAgeFromDob())}.jpg`;
+  function familyMemberInfo() {
+    return (
+      <>
+        <h3>{firstName}</h3>
+        <h4>{dob}</h4>
+        <p>
+          <strong>Hobbies:</strong> {hobbies}
+        </p>
+        <button className="delete" onClick={onDeleteClick}>
+          &times;
+        </button>
+      </>
+    );
   }
 
   return (
     <article className="person">
       <section>
-        <h3>{firstName}</h3>
-        <h4>{dob}</h4>
-        <p>{bio}</p>
-        <button className="delete" onClick={onDeleteClick}>
-          &times;
-        </button>
+        <FontAwesomeIcon
+          icon={editMode ? 'eye' : 'pencil-alt'}
+          className="edit-btn"
+          onClick={onEditClick}
+        />
+        {editMode ? (
+          <FamilyForm onFamilySubmit={onFamPut} famMemberToEdit={familyMember} />
+        ) : (
+          familyMemberInfo()
+        )}
       </section>
       <aside>{getImgUrl() ? <img src={getImgUrl()} alt={firstName} /> : ''}</aside>
     </article>
   );
-};
+}
 
 Person.propTypes = {
-  firstName: PropTypes.string.isRequired,
-  dob: PropTypes.string,
-  bio: PropTypes.string,
-  onDeleteClick: PropTypes.func.isRequired
+  familyMember: PropTypes.shape({
+    id: PropTypes.number,
+    firstName: PropTypes.string.isRequired,
+    dob: PropTypes.string,
+    hobbies: PropTypes.string
+  }).isRequired,
+  onDeleteClick: PropTypes.func.isRequired,
+  onFamPut: PropTypes.func.isRequired,
+  editMode: PropTypes.bool
 };
 
 export default Person;

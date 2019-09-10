@@ -6,18 +6,24 @@ const emptyFamMember = {
   id: null,
   firstName: '',
   dob: '',
-  bio: ''
+  hobbies: ''
 };
 
-function FamilyForm(props) {
-  const [famMember, setFamMember] = useState(emptyFamMember);
+function FamilyForm({ onFamilySubmit, famMemberToEdit = null }) {
+  const [famMember, setFamMember] = useState(famMemberToEdit || emptyFamMember);
+
+  function resetForm() {
+    setFamMember(famMemberToEdit || emptyFamMember);
+  }
 
   function handleSubmit(event) {
     event.preventDefault();
 
-    props.onFamilySubmit(famMember);
-    setFamMember(emptyFamMember);
+    onFamilySubmit(famMember, () => {
+      resetForm(famMember);
+    });
   }
+
   function handleChange(event) {
     const { name, value } = event.target;
 
@@ -26,7 +32,7 @@ function FamilyForm(props) {
 
   return (
     <section>
-      <h2>Add a Family Member</h2>
+      <h2>{famMemberToEdit ? `Edit ${famMemberToEdit.firstName}` : 'Add a Family Member'}</h2>
       <form onSubmit={handleSubmit}>
         <TextInput
           label="First Name"
@@ -43,11 +49,11 @@ function FamilyForm(props) {
           value={famMember.dob}
         />
         <TextArea
-          label="Bio"
-          name="bio"
+          label="Hobbies"
+          name="hobbies"
           onChange={handleChange}
-          placeholder="Bio"
-          value={famMember.bio}
+          placeholder="Hobbies"
+          value={famMember.hobbies}
         />
         <button type="submit">Submit</button>
       </form>
